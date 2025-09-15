@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | AI Agents Accelerator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#00c3ff; --ink:#001018; --dim:#bfeeff;
+      --panel:rgba(0,15,25,.72); --border:rgba(0,195,255,.22);
+      --glow:0 0 18px rgba(0,195,255,.45); --bg:#000;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--dim);font-family:Poppins,sans-serif;line-height:1.65;overflow-x:hidden}
+    header{padding:20px 24px;background:rgba(0,0,0,.9);border-bottom:1px solid var(--border)}
+    .logo{color:var(--blue);font-weight:700;text-decoration:none}
+    main{max-width:1000px;margin:0 auto;padding:48px 20px}
+    h1{color:var(--blue);margin:0 0 12px;text-shadow:var(--glow)}
+    p{margin:10px 0}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+    @media(max-width:960px){.hero{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:960px){.grid{grid-template-columns:1fr}}
+    .pill{border:1px solid var(--border);padding:6px 10px;border-radius:999px;font-size:12px;margin-right:8px;color:#9fdcff}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .primary{background:var(--blue);color:var(--ink);box-shadow:0 6px 16px rgba(0,195,255,.25)}
+    .ghost{border:1px solid var(--border);color:var(--dim)}
+    ul{margin:8px 0 0 20px}
+    footer{padding:20px;text-align:center;border-top:1px solid var(--border);background:rgba(0,0,0,.9);color:#9fdcff;margin-top:40px}
+    /* subtle backdrop */
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-1;
+      background:
+        radial-gradient(900px 600px at 20% 20%, rgba(0,195,255,.10), transparent 60%),
+        radial-gradient(800px 500px at 80% 30%, rgba(0,195,255,.08), transparent 65%),
+        radial-gradient(900px 700px at 50% 90%, rgba(0,195,255,.06), transparent 70%),
+        #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">☁️ Cloudy Worx</a>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>AI Agents Accelerator</h1>
+        <p><b>Book a private session to identify high-value AI agent use cases for your enterprise workflows.</b></p>
+        <div class="cta-row">
+          <!-- Point this to your booking form or Calendly -->
+          <a class="btn primary" href="contact.html">Book now →</a>
+          <a class="btn ghost" href="updates.html">Get product updates</a>
+        </div>
+        <div style="margin-top:10px">
+          <span class="pill">Private Workshop</span>
+          <span class="pill">1–2 Weeks</span>
+          <span class="pill">Cross-Functional</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0;color:#00c3ff">What you get</h2>
+        <ul>
+          <li>Curated list of 8–12 high-ROI agent use cases</li>
+          <li>Process mapping & feasibility scoring (value vs. effort)</li>
+          <li>Reference architectures (tools, APIs, guardrails)</li>
+          <li>Build plan for a pilot in 30–45 days</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section style="margin-top:28px">
+      <div class="grid">
+        <div class="card">
+          <h3 style="color:#00c3ff;margin-top:0">Ops & Support</h3>
+          <p>Dispatch, triage, and resolution agents for customer support, ITSM, and field ops.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:#00c3ff;margin-top:0">Sales & Marketing</h3>
+          <p>Prospecting, enrichment, proposal drafting, and campaign QA with human-in-the-loop.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:#00c3ff;margin-top:0">Finance & HR</h3>
+          <p>Close automation, spend insights, policy Q&A, onboarding, and compliance checks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section style="margin-top:10px">
+      <div class="card">
+        <h2 style="color:#00c3ff;margin-top:0">How it works</h2>
+        <ol style="margin-left:18px">
+          <li><b>Discovery:</b> Stakeholder interviews & workflow capture</li>
+          <li><b>Ideation:</b> Use-case patterns & risk/benefit framing</li>
+          <li><b>Pilot Plan:</b> Tools, prompts, evaluators, and guardrails</li>
+          <li><b>Roadmap:</b> 90-day rollout with ownership & KPI tracking</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Optional: sample agent patterns -->
+    <section>
+      <div class="grid">
+        <div class="card">
+          <h3 style="color:#00c3ff;margin-top:0">Research Agent</h3>
+          <p>Monitors sources, summarizes findings, and drafts briefs with citations.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:#00c3ff;margin-top:0">RPA Bridge Agent</h3>
+          <p>Calls APIs and legacy UIs to complete multi-step tasks across systems.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:#00c3ff;margin-top:0">Supervisor Agent</h3>
+          <p>Routes jobs to specialist agents, evaluates outputs, and escalates exceptions.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-row" style="margin-top:6px">
+      <a class="btn primary" href="contact.html">Book now →</a>
+      <a class="btn ghost" href="careers.html">Work at Cloudy Worx</a>
+    </div>
+  </main>
+
+  <footer>© 2010 Cloudy Worx — AI Agents Accelerator</footer>
+</body>
+</html>

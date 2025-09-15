@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+  <style>
+    :root{--brand:#00d4ff;--ink:#fff;--bg:#000;--muted:rgba(255,255,255,.75);--panel:rgba(255,255,255,.06)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;background:radial-gradient(1200px 800px at 20% 30%, #1a1a2e 0%, transparent 60%),radial-gradient(900px 700px at 80% 20%, #0a2a3e 0%, transparent 55%),radial-gradient(1200px 900px at 50% 80%, #001018 0%, transparent 65%),#000;z-index:-3}
+    .stars{position:fixed;inset:0;z-index:-2;overflow:hidden}
+    .star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle calc(1.5s + 1.5s * var(--d)) ease-in-out infinite alternate}
+    @keyframes twinkle{from{transform:scale(.6);opacity:.3}to{transform:scale(1.2);opacity:1}}
+    
+    /* Header */
+    .cw-header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 32px;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)}
+    .cw-header .logo{font-size:22px;font-weight:600;color:var(--brand);text-decoration:none}
+    .cw-header nav{display:flex;gap:22px}
+    .cw-header nav a{color:var(--ink);text-decoration:none}
+    .cw-header nav a:hover,.cw-header nav a.active{color:var(--brand)}
+    
+    .intro{max-width:950px;margin:64px auto 16px;padding:0 20px;text-align:center}
+    .intro h1{font-size:36px;margin:0 0 12px}
+    .wrap{max-width:1100px;margin:28px auto 64px;padding:0 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+    
+    .card{border-radius:16px;padding:28px;background:var(--panel);border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .card h2{color:var(--brand);margin-top:0}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+    form .full{grid-column:1/-1}
+    label{font-size:13px;color:var(--muted);display:block;margin:6px 0}
+    input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.55);color:var(--ink);font-size:15px}
+    textarea{resize:vertical;min-height:110px}
+    .actions{display:flex;gap:12px;align-items:center;margin-top:6px}
+    button.cta{cursor:pointer;border:none;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;color:#001018;background:var(--brand)}
+    
+    .side{border-radius:16px;padding:24px;background:linear-gradient(180deg, rgba(0,212,255,.08), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12)}
+    .side h3{color:var(--brand);margin-top:0}
+    
+    footer{text-align:center;padding:22px;font-size:14px;background:rgba(0,0,0,.65);border-top:1px solid rgba(255,255,255,.12)}
+    
+    .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);opacity:0;background:#06141a;color:#fff;border:1px solid rgba(255,255,255,.12);padding:12px 16px;border-radius:12px;transition:.35s ease;z-index:20}
+    .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+    /* Admin modal */
+    .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:30}
+    .modal.show{display:grid}
+    .modal-card{width:min(420px,92vw);border-radius:16px;padding:22px;background:#0b1b22;border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+    .modal-card h3{margin:0 0 8px;color:var(--brand)}
+    .error{color:#ff7b7b;font-size:13px;min-height:18px}
+    
+  </style>
+</head>
+
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="cw-header">
+  <a class="logo" href="index.html">
+    <img src="logo-cloud.png" alt="Cloudy Worx Logo">
+  </a>
+  <nav>
+      <a href="index.html">Home</a>
+      <a href="reception.html">Reception</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h1>Contact Cloudy Worx</h1>
+    <p>Provide your details and we’ll route your request to the right team. You’ll receive a response within <strong>48 hours</strong>.</p>
+  </section>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Contact us</h2>
+      <form id="contactForm" novalidate>
+        <div><label for="firstName">First Name</label><input id="firstName" name="firstName" required></div>
+        <div><label for="lastName">Last Name</label><input id="lastName" name="lastName" required></div>
+        <div><label for="email">Email Address</label><input id="email" name="email" type="email" required></div>
+        <div><label for="title">Job Title</label><input id="title" name="title"></div>
+        <div><label for="org">Organization Name</label><input id="org" name="org"></div>
+        <div><label for="phone">Phone Number</label><input id="phone" name="phone"></div>
+        <div><label for="inquiry">Inquiry Type</label>
+          <select id="inquiry" name="inquiry" required>
+            <option value="" disabled selected>Choose</option>
+            <option>Sales</option><option>Support</option><option>Partnership</option><option>Careers</option><option>Media</option><option>Other</option>
+          </select>
+        </div>
+        <div><label for="country">Country</label><input id="country" name="country"></div>
+        <div class="full"><label for="industry">Industry</label><input id="industry" name="industry"></div>
+        <div class="full"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        <div class="full actions">
+          <button class="cta" type="submit">Submit</button>
+          <span style="color:var(--muted)">We respect your privacy.</span>
+        </div>
+      </form>
+    </section>
+
+    <aside class="side">
+      <h3>Corporate Office Address</h3>
+      <div><strong>Cloudy Worx Ltd.</strong><br>Doddakannelli, Sarjapur Road<br>Bengaluru - 560 035, India</div>
+      <div style="margin-top:10px">📧 info@cloudyworx.com<br>📞 +1-555-123-4567</div>
+      <div style="margin-top:14px"><button id="openAdmin" class="cta" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)">➡️ Admin Login</button></div>
+    </aside>
+  </main>
+
+  <footer>© 2010 Cloudy Worx | US MNC. All rights reserved.</footer>
+
+  <div class="toast" id="toast">Saved! We’ll get back to you within 48 hours.</div>
+
+  <!-- Admin Login Modal -->
+  <div class="modal" id="adminModal" aria-hidden="true">
+    <div class="modal-card">
+      <h3>Admin Login</h3>
+      <form id="adminForm">
+        <label for="adminId">Admin ID</label>
+        <input id="adminId" name="adminId" required>
+        <label for="adminPwd" style="margin-top:8px">Password</label>
+        <input id="adminPwd" name="adminPwd" type="password" required>
+        <div class="error" id="adminError"></div>
+        <div class="actions" style="margin-top:10px">
+          <button type="submit" class="cta">Login</button>
+          <button type="button" id="closeAdmin" class="cta" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // stars
+    const starsContainer=document.querySelector(".stars");
+    for(let i=0;i<90;i++){const s=document.createElement("div");s.className="star";s.style.top=Math.random()*100+"%";s.style.left=Math.random()*100+"%";s.style.setProperty("--d",Math.random());starsContainer.appendChild(s);} 
+
+    // contact form
+    const form=document.getElementById("contactForm"),toast=document.getElementById("toast");
+    form.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const data=Object.fromEntries(new FormData(form).entries());
+      const key="cloudyworx_contacts",list=JSON.parse(localStorage.getItem(key))||[];
+      const record={...data,submittedAt:new Date().toISOString()};list.push(record);
+      localStorage.setItem(key,JSON.stringify(list));
+      try{const res=await fetch("/api/contacts",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(record)});if(!res.ok)throw new Error("Network error");}catch(err){console.error("Save failed:",err);}
+      form.reset();showToast("Saved! We’ll get back to you within 48 hours.");
+    });
+    function showToast(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),3000);}
+
+    // admin login
+    const adminModal=document.getElementById("adminModal"),openAdmin=document.getElementById("openAdmin"),closeAdmin=document.getElementById("closeAdmin"),adminForm=document.getElementById("adminForm"),adminError=document.getElementById("adminError");
+    function showAdminModal(){adminModal.classList.add("show");adminModal.setAttribute("aria-hidden","false");document.getElementById("adminId").focus();}
+    function hideAdminModal(){adminModal.classList.remove("show");adminModal.setAttribute("aria-hidden","true");adminError.textContent="";adminForm.reset();}
+    openAdmin.addEventListener("click",e=>{e.preventDefault();showAdminModal();});
+    closeAdmin.addEventListener("click",hideAdminModal);
+    adminModal.addEventListener("click",e=>{if(e.target===adminModal)hideAdminModal();});
+    window.addEventListener("keydown",e=>{if(e.key==="Escape"&&adminModal.classList.contains("show"))hideAdminModal();});
+    adminForm.addEventListener("submit",e=>{
+      e.preventDefault();
+      const data=Object.fromEntries(new FormData(adminForm).entries());
+      if(data.adminId==="techvora7791"&&data.adminPwd==="mummy7791"){sessionStorage.setItem("cloudyworx_admin",JSON.stringify({id:data.adminId,ts:Date.now()}));window.location.href="admin.html";}
+      else{adminError.textContent="Invalid Admin ID or Password.";}
+    });
+  </script>
+</body>
+</html>
+'@ | Set-Content -Encoding UTF8 public\contact.html

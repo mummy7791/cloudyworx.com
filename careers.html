@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudy Worx | Careers</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+ 
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="careers.css">
+</head>
+<body>
+   <header class="cw-header">
+  <a class="logo" href="index.html">
+    <img src="logo-cloud.png" alt="Cloudy Worx Logo">
+  </a>
+
+    <span class="logo">Cloudy Worx</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="reception.html">Reception</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Slideshow -->
+   
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" class="active" alt="Career 1">
+    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0" alt="Career 2">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Career 3">
+    <div class="hero-text">Build Your Future with Cloudy Worx</div>
+  </div>
+
+  <section>
+    <!-- Intro -->
+    <div class="intro">
+      <p>
+        At <b>Cloudy Worx</b>, we believe in empowering people through innovation, 
+        growth, and global opportunities. Whether you are just starting your career 
+        or are an experienced professional, we provide a platform to grow, learn, and shine.
+      </p>
+    </div>
+
+    <!-- Career Photos -->
+    <div class="photos">
+      <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe" alt="Teamwork">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Office">
+      <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51" alt="Technology">
+      <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc" alt="Work Culture">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Growth">
+    </div>
+  </section>
+
+  <!-- Admin & Candidate Login (Bottom Section) -->
+  <section>
+    <h2>Admin Login</h2>
+    <div class="form-box" id="adminLoginBox">
+      <input type="text" id="adminId" placeholder="Admin ID" required>
+      <input type="password" id="adminPassword" placeholder="Admin Password" required>
+      <button onclick="adminLogin()">Login</button>
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+      <h2>Admin Panel - Create Candidate</h2>
+      <div class="form-box">
+        <input type="text" id="name" placeholder="Candidate Name" required>
+        <input type="email" id="email" placeholder="Candidate Email" required>
+        <input type="text" id="phone" placeholder="Candidate Phone" required>
+        <input type="text" id="job" placeholder="Job Designation" required>
+        <input type="text" id="location" placeholder="Job Location" required>
+        <input type="text" id="package" placeholder="Package" required>
+        <button onclick="createCandidate()">Create Candidate</button>
+      </div>
+    </div>
+    <!-- === Company Highlights (place this between Admin Panel and Candidate Login) === -->
+<section class="company-highlights">
+  <h2>About Cloudy Worx</h2>
+  <p class="ch-intro">
+    Cloudy Worx is a global cloud & digital services company focused on delivering secure, scalable, and
+    business-ready solutions. We partner with enterprises across industries to modernize platforms,
+    accelerate innovation, and create measurable impact.
+  </p>
+
+  <div class="ch-grid">
+    <div class="ch-card">
+      <h3>Career Growth</h3>
+      <ul class="ch-list">
+        <li>Structured learning paths with certifications (Cloud, DevOps, Security)</li>
+        <li>Clear role levels and internal mobility across teams & regions</li>
+        <li>Mentorship programs and quarterly growth conversations</li>
+        <li>Hands-on exposure to enterprise-scale, real-world projects</li>
+      </ul>
+    </div>
+
+    <div class="ch-card">
+      <h3>Why People Choose Us</h3>
+      <ul class="ch-list">
+        <li>Modern tech stack & product-driven culture</li>
+        <li>Inclusive, collaborative, and high-performance environment</li>
+        <li>Flexible work options with productivity-first mindset</li>
+        <li>Competitive pay, health benefits, and wellness support</li>
+      </ul>
+    </div>
+
+    <div class="ch-card">
+      <h3>What We Value</h3>
+      <ul class="ch-list">
+        <li>Customer impact over activity</li>
+        <li>Ownership, transparency, and accountability</li>
+        <li>Craftsmanship and continuous improvement</li>
+        <li>Security, reliability, and ethics by design</li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Three Feature Boxes with Photos -->
+<div class="ch-feature-grid">
+  <div class="ch-feature">
+    <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe" alt="Career Growth">
+    <h3>Career Growth</h3>
+    <p>
+      Structured learning programs, certifications, and real-world projects 
+      designed to accelerate your career at Cloudy Worx.
+    </p>
+  </div>
+
+  <div class="ch-feature">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Work Culture">
+    <h3>Work Culture</h3>
+    <p>
+      A collaborative, inclusive, and innovation-driven workplace where 
+      people thrive and ideas turn into impact.
+    </p>
+  </div>
+
+  <div class="ch-feature">
+    <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51" alt="Global Opportunities">
+    <h3>Global Opportunities</h3>
+    <p>
+      With enterprise clients across industries, we provide global exposure 
+      and opportunities to grow beyond boundaries.
+    </p>
+  </div>
+</div>
+
+  <div class="ch-note">
+    We’re building a place where talented people do the best work of their careers—while learning fast,
+    shipping value, and shaping the future of cloud.
+  </div>
+</section>
+
+
+    <h2>Candidate Login</h2>
+    <div class="form-box">
+      <input type="text" id="loginId" placeholder="Candidate ID" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button onclick="candidateLogin()">Login</button>
+    </div>
+
+    <div id="candidateDetails" class="candidate-details" style="display:none;"></div>
+  </section>
+
+  <footer>
+    &copy; 2010 Cloudy Worx | US MNC. All rights reserved.
+  </footer>
+
+  <!-- External JS -->
+  <script src="careers.js"></script>
+</body>
+</html>

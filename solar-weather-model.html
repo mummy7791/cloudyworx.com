@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx Research | Open AI Model for Solar Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#00c3ff; --ink:#001018; --dim:#bfeeff;
+      --panel:rgba(0,15,25,.72); --border:rgba(0,195,255,.22);
+      --glow:0 0 18px rgba(0,195,255,.45); --bg:#000;
+      --accent:#8ef0ff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--dim);font-family:Poppins,sans-serif;line-height:1.65;overflow-x:hidden}
+    header{padding:20px 24px;background:rgba(0,0,0,.9);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+    .logo{color:var(--blue);font-weight:700;text-decoration:none}
+    main{max-width:1100px;margin:0 auto;padding:40px 20px}
+    h1{color:var(--blue);margin:0 0 12px;text-shadow:var(--glow)}
+    h2{color:var(--blue);margin:26px 0 10px;text-shadow:var(--glow)}
+    p{margin:10px 0}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+    @media(max-width:960px){.hero{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .primary{background:var(--blue);color:var(--ink);box-shadow:0 6px 16px rgba(0,195,255,.25)}
+    .ghost{border:1px solid var(--border);color:var(--dim)}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+    .pill{border:1px solid var(--border);padding:4px 10px;border-radius:999px;font-size:12px;color:var(--accent)}
+    pre{background:#04141b;border:1px solid var(--border);padding:14px;border-radius:10px;overflow:auto}
+    code{color:#d2f6ff}
+    ul{margin:6px 0 10px 20px}
+    footer{padding:20px;text-align:center;border-top:1px solid var(--border);background:rgba(0,0,0,.9);color:#9fdcff}
+    /* subtle backdrop */
+    body::before{
+      content:"";position:fixed;inset:0;z-index:-1;
+      background:
+        radial-gradient(900px 600px at 20% 20%, rgba(0,195,255,.10), transparent 60%),
+        radial-gradient(800px 500px at 80% 30%, rgba(0,195,255,.08), transparent 65%),
+        radial-gradient(900px 700px at 50% 90%, rgba(0,195,255,.06), transparent 70%),
+        #000;
+    }
+    .spark{font-size:13px;opacity:.85}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">☁️ Cloudy Worx Research</a>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>Open AI model for solar weather</h1>
+        <p><b>Cloudy Worx Research</b> releases an open-source foundation model to forecast solar storms and protect critical infrastructure.</p>
+        <div class="badges">
+          <span class="pill">Open-source</span>
+          <span class="pill">Time-series + Vision</span>
+          <span class="pill">Forecast horizon: 6–72h</span>
+          <span class="pill">Apache-2.0</span>
+        </div>
+        <div class="cta-row">
+          <!-- Point this href to your actual model repo or file -->
+          <a class="btn primary" href="https://example.com/cloudyworx-solar-weather-model.tar.gz">Get the model →</a>
+          <a class="btn ghost" href="solar-model-card.html">Model Card</a>
+          <a class="btn ghost" href="solar-paper.html">Technical Report</a>
+        </div>
+        <p class="spark">Includes model weights, tokenizer, inference scripts, and evaluation notebooks.</p>
+      </div>
+      <div class="card">
+        <h2>Why it matters</h2>
+        <p>Geomagnetic disturbances (GMDs) from solar storms can disrupt power grids, satellites, aviation, and communications. Accurate early forecasts give operators time to reroute loads, place satellites in safe modes, and protect equipment.</p>
+        <ul>
+          <li>Short-term (6–24h) flare & CME risk nowcasting</li>
+          <li>Mid-term (24–72h) Kp, Dst, AE index forecasting</li>
+          <li>Uncertainty-aware outputs for risk-based decisions</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- What’s inside -->
+    <section>
+      <h2>What’s inside</h2>
+      <div class="card">
+        <ul>
+          <li><b>Architecture:</b> Multimodal foundation model (temporal transformer + CNN encoder) for solar imagery (SDO/AIA), heliospheric parameters, and ground magnetometer series.</li>
+          <li><b>Inputs:</b> EUV images, solar wind speed/density/Bz, F10.7, OMNI data, and magnetometer arrays.</li>
+          <li><b>Targets:</b> Probabilistic forecasts for Kp/Dst, CME arrival windows, and storm severity tiers.</li>
+          <li><b>Outputs:</b> Point forecasts + calibrated prediction intervals (P10/P50/P90).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Quick start -->
+    <section>
+      <h2>Quick start</h2>
+      <div class="card">
+        <pre><code># 1) Install
+pip install cloudyworx-solar
+
+# 2) Download weights (or use the “Get the model” button)
+python -m cloudyworx_solar.download --model solar-foundation-v1
+
+# 3) Inference (Python)
+from cloudyworx_solar import SolarForecaster, load_example_batch
+
+model = SolarForecaster.from_pretrained("solar-foundation-v1")
+batch = load_example_batch()  # loads sample AIA images + time-series
+pred = model.predict(batch, horizon_hours=48)
+
+print(pred.kp.mean, pred.kp.interval)          # Point & interval forecasts
+print(pred.cme.arrival_window)                 # Estimated CME arrival
+pred.save_plot("forecast.png")                 # Convenience plotting</code></pre>
+        <p class="spark">Note: Replace package/command names with your actual repo details when ready.</p>
+      </div>
+    </section>
+
+    <!-- Benchmarks -->
+    <section>
+      <h2>Benchmarks (v1)</h2>
+      <div class="card">
+        <ul>
+          <li><b>Kp RMSE (0–9):</b> 0.78 @ 24h | 1.05 @ 48h | 1.31 @ 72h</li>
+          <li><b>Dst MAE (nT):</b> 8.6 @ 24h | 12.4 @ 48h | 16.7 @ 72h</li>
+          <li><b>CME ATA (hrs):</b> MAE 6.2 (SOHO/CAE test set)</li>
+          <li><b>Coverage:</b> P10/P90 interval coverage 89.7% (target 90%)</li>
+        </ul>
+        <p class="spark">Numbers shown for illustration—update with your evaluated metrics.</p>
+      </div>
+    </section>
+
+    <!-- Licensing & responsible AI -->
+    <section>
+      <h2>Open license & responsible use</h2>
+      <div class="card">
+        <p>Released under <b>Apache-2.0</b>. Include the Model Card and Responsible AI considerations when redistributing. This model assists expert workflows; always keep humans-in-the-loop for critical operations.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>© Cloudy Worx Research — Solar Weather Foundation Model</footer>
+</body>
+</html>

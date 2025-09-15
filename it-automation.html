@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | IT Automation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#00c3ff;--ink:#001018;--dim:#bfeeff;--panel:rgba(0,15,25,.72);--border:rgba(0,195,255,.22);--glow:0 0 18px rgba(0,195,255,.45);--bg:#000;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,sans-serif;background:var(--bg);color:var(--dim);line-height:1.65}
+    header{padding:20px;background:rgba(0,0,0,.9);border-bottom:1px solid var(--border)}
+    .logo{color:var(--blue);font-weight:700;text-decoration:none}
+    main{max-width:1100px;margin:0 auto;padding:50px 20px}
+    h1{color:var(--blue);margin:0 0 16px;text-shadow:var(--glow)}
+    h2{color:var(--blue);margin:28px 0 10px;text-shadow:var(--glow)}
+    p{margin:10px 0}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;margin:20px 0;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+    ul{margin:8px 0 8px 20px}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .cta{display:inline-block;margin-top:20px;padding:14px 22px;border-radius:10px;background:var(--blue);color:var(--ink);text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(0,195,255,.25)}
+    .cta:hover{background:#05b3ea}
+    footer{padding:20px;text-align:center;border-top:1px solid var(--border);background:rgba(0,0,0,.9);color:#9fdcff;margin-top:40px}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">☁️ Cloudy Worx</a>
+  </header>
+
+  <main>
+    <h1>IT Automation</h1>
+    <p><b>Automate operations, reduce toil, and accelerate IT workflows with Cloudy Worx.</b></p>
+
+    <div class="card">
+      <h2>Overview</h2>
+      <p>Our IT automation suite helps enterprises modernize infrastructure and operations. Reduce manual effort, cut costs, and improve reliability with event-driven automation and AI-powered workflows.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Infrastructure Automation</h3>
+        <p>Provision, configure, and manage servers, VMs, and containers with Infrastructure-as-Code.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Workflow Orchestration</h3>
+        <p>Automate ticketing, approvals, and cross-team workflows with pre-built connectors.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Incident Response</h3>
+        <p>AI-driven detection, runbooks, and self-healing automation reduce MTTR by up to 70%.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">DevOps Acceleration</h3>
+        <p>CI/CD pipelines, test automation, and deployment governance with integrated security.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Key Capabilities</h2>
+      <ul>
+        <li>⚙️ Infrastructure-as-Code (Terraform, Ansible)</li>
+        <li>🔗 Integration with ITSM tools like ServiceNow and Jira</li>
+        <li>📊 Observability dashboards for automated processes</li>
+        <li>🛡️ Policy-driven access controls and compliance checks</li>
+        <li>🚀 Cloud-native automation across AWS, Azure, GCP</li>
+      </ul>
+    </div>
+
+    <a href="contact.html" class="cta">Explore →</a>
+  </main>
+
+  <footer>© 2010 Cloudy Worx | IT Automation</footer>
+</body>
+</html>

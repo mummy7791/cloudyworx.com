@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Cloudy Worx AssetOps | Explore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#00c3ff;--ink:#001018;--dim:#bfeeff;--panel:rgba(0,15,25,.7);--border:rgba(0,195,255,.2)}
+    *{box-sizing:border-box} body{margin:0;font-family:Poppins,sans-serif;background:#000;color:#bfeeff}
+    header{padding:20px 24px;background:rgba(0,0,0,.9);position:sticky;top:0;border-bottom:1px solid var(--border)}
+    a.logo{color:var(--blue);text-decoration:none;font-weight:700}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    h1{color:var(--blue);margin:0 0 8px} h2{color:var(--blue);margin:28px 0 10px}
+    p{margin:10px 0;color:#bfeeff}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    ul{margin:8px 0 0 18px}
+    .cta{display:inline-block;margin-top:14px;padding:12px 18px;border-radius:10px;background:var(--blue);color:var(--ink);text-decoration:none;font-weight:700}
+    .ghost{background:transparent;border:1px solid var(--border);color:#bfeeff}
+    footer{padding:22px;text-align:center;border-top:1px solid var(--border);color:#9fdcff}
+  </style>
+</head>
+<body>
+  <header><a class="logo" href="index.html">☁️ Cloudy Worx</a></header>
+
+  <main class="wrap">
+    <h1>Maximize Asset Value with AssetOps</h1>
+    <p>Optimize asset performance with AI-driven monitoring and predictive maintenance on an enterprise-grade EAM stack.</p>
+
+    <div class="card">
+      <h2>What is AssetOps?</h2>
+      <p>AssetOps combines sensors, IoT, and machine learning with a robust EAM (Enterprise Asset Management) layer to monitor asset health, predict failures, and orchestrate work orders, parts, and field teams—end to end.</p>
+    </div>
+
+    <h2>Core Capabilities</h2>
+    <div class="grid">
+      <div class="card"><h3>AI Monitoring</h3><p>Stream, cleanse, and model telemetry from pumps, turbines, HVAC, fleets, and more to flag anomalies in real time.</p></div>
+      <div class="card"><h3>Predictive Maintenance</h3><p>Remaining useful life (RUL) models trigger preventive jobs before breakdowns occur.</p></div>
+      <div class="card"><h3>Smart Work Orders</h3><p>Auto-generate work orders with checklists, safety steps, and SLAs tied to asset criticality.</p></div>
+      <div class="card"><h3>Inventory & Spares</h3><p>Optimize reorder points and min/max levels using usage/lead-time forecasts.</p></div>
+      <div class="card"><h3>Field Mobility</h3><p>Offline apps for technicians with barcodes, photos, e-sign, and GPS time stamps.</p></div>
+      <div class="card"><h3>Analytics & Compliance</h3><p>MTBF/MTTR, downtime, parts burn, and audit trails for ISO/OSHA compliance.</p></div>
+    </div>
+
+    <h2>Reference Architecture</h2>
+    <div class="card">
+      <ul>
+        <li><b>Edge & IoT:</b> Gateways, OPC-UA, Modbus, CAN bus, telematics.</li>
+        <li><b>Streaming:</b> Time-series storage, rule engine, event router.</li>
+        <li><b>ML:</b> Anomaly detection, forecasting, RUL, root cause models.</li>
+        <li><b>EAM:</b> Assets, hierarchies, work orders, parts, vendors, SLA.</li>
+        <li><b>Apps:</b> Web console, field mobility, customer/partner portals.</li>
+        <li><b>Security:</b> SSO, RBAC, audit, encryption in transit/at rest.</li>
+      </ul>
+    </div>
+
+    <h2>Business Impact</h2>
+    <div class="grid">
+      <div class="card"><h3>↓ Unplanned Downtime</h3><p>Cut unexpected outages by 20–40% with predictive maintenance.</p></div>
+      <div class="card"><h3>↓ Maintenance Cost</h3><p>Reduce emergency work and overtime by ~15–25%.</p></div>
+      <div class="card"><h3>↑ Asset Life</h3><p>Extend asset life by 10–20% via condition-based care.</p></div>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="cta" href="casestudy.html">Read the case studies</a>
+      <a class="cta ghost" href="index.html">Back</a>
+    </div>
+  </main>
+
+  <footer>© Cloudy Worx — AssetOps</footer>
+</body>
+</html>

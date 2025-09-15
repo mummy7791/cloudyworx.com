@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | AI Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#00c3ff;--ink:#001018;--dim:#bfeeff;--panel:rgba(0,15,25,.72);--border:rgba(0,195,255,.22);--glow:0 0 18px rgba(0,195,255,.45);--bg:#000;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,sans-serif;background:var(--bg);color:var(--dim);line-height:1.65}
+    header{padding:20px;background:rgba(0,0,0,.9);border-bottom:1px solid var(--border)}
+    .logo{color:var(--blue);font-weight:700;text-decoration:none}
+    main{max-width:1100px;margin:0 auto;padding:50px 20px}
+    h1{color:var(--blue);margin:0 0 16px;text-shadow:var(--glow)}
+    h2{color:var(--blue);margin:28px 0 10px;text-shadow:var(--glow)}
+    p{margin:10px 0}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;margin:20px 0;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    @media(max-width:960px){.grid{grid-template-columns:1fr}}
+    ul{margin:8px 0 8px 20px}
+    .cta{display:inline-block;margin-top:20px;padding:14px 22px;border-radius:10px;background:var(--blue);color:var(--ink);text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(0,195,255,.25)}
+    .cta:hover{background:#05b3ea}
+    footer{padding:20px;text-align:center;border-top:1px solid var(--border);background:rgba(0,0,0,.9);color:#9fdcff;margin-top:40px}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">☁️ Cloudy Worx</a>
+  </header>
+
+  <main>
+    <h1>AI solutions</h1>
+    <p><b>End-to-end AI for real business outcomes—strategy, models, apps, and MLOps.</b></p>
+
+    <div class="card">
+      <h2>What we deliver</h2>
+      <p>From roadmap to rollout, Cloudy Worx packages AI capabilities into deployable solutions that plug into your data and tools—securely and responsibly.</p>
+      <ul>
+        <li>Use-case discovery and value framing</li>
+        <li>Data pipelines, vector search, and retrieval</li>
+        <li>Model selection, fine-tuning, and evaluation</li>
+        <li>Apps, agents, and workflow automations</li>
+        <li>Observability, guardrails, and governance</li>
+      </ul>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Customer Experience</h3>
+        <p>AI agents for support, sales, and onboarding with human-in-the-loop escalation.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Operations & IT</h3>
+        <p>Incident copilot, log intelligence, and self-healing runbooks to reduce MTTR.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Finance & Risk</h3>
+        <p>Forecasting, anomaly detection, and policy Q&A with compliant data access.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">HR & Productivity</h3>
+        <p>Knowledge assistants, talent matching, and document automation.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Analytics Acceleration</h3>
+        <p>Natural-language BI, metric stores, and automated insights for decision-makers.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:#00c3ff;margin-top:0">Industry Blueprints</h3>
+        <p>Pre-built prompts, schemas, and evaluators tailored to your sector.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How it works</h2>
+      <ol style="margin-left:20px">
+        <li><b>Discovery:</b> Prioritize 5–10 high-impact use cases</li>
+        <li><b>Pilot:</b> Build an MVP with measurable KPIs</li>
+        <li><b>Scale:</b> Harden, govern, and integrate across teams</li>
+      </ol>
+    </div>
+
+    <a href="contact.html" class="cta">Explore →</a>
+  </main>
+
+  <footer>© 2010 Cloudy Worx | AI Solutions</footer>
+</body>
+</html>

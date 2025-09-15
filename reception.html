@@ -1,0 +1,133 @@
+<!-- reception.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | Reception</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reception.css">
+
+
+</head>
+<body>
+  <!-- Animated Background Layers -->
+  <div class="bg">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="orbs" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="cw-header">
+  <a class="logo" href="index.html">
+    <img src="logo-cloud.png" alt="Cloudy Worx Logo">
+  </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="reception.html">Reception</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- Greeting / Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Reception Portal</h1>
+        <p>Verify candidate details instantly. Secure, fast, and tailored for front-desk efficiency.</p>
+        <div class="chips">
+          <span>Secure</span><span>Realtime</span><span>MNC-grade</span><span>Privacy-Focused</span>
+        </div>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-graphic">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <div class="pulse"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards Row -->
+    <section class="grid">
+      <!-- Reception Login -->
+      <article class="card tilt" id="receptionLoginBox">
+        <div class="card-head">
+          <h2>Reception Login</h2>
+          <p>Authorized personnel only</p>
+        </div>
+        <div class="card-body">
+          <label class="field">
+            <span>Reception ID</span>
+            <input type="text" id="receptionId" placeholder="e.g. cloudy@123" autocomplete="username">
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" id="receptionPassword" placeholder="••••••••" autocomplete="current-password">
+          </label>
+          <button class="btn primary" id="receptionLoginBtn">
+            <span>Login</span>
+            <i class="glow-dot"></i>
+          </button>
+          <small class="hint">Use your reception credentials to continue.</small>
+        </div>
+      </article>
+
+      <!-- Candidate Verification -->
+      <article class="card tilt hidden" id="verificationSection">
+        <div class="card-head">
+          <h2>Candidate Verification</h2>
+          <p>Search by Candidate ID</p>
+        </div>
+        <div class="card-body">
+          <label class="field">
+            <span>Candidate ID</span>
+            <input type="text" id="candidateIdInput" placeholder="Enter Candidate ID (e.g. CW1234)">
+          </label>
+          <button class="btn ghost" id="checkCandidateBtn">
+            <span>Check Candidate</span>
+          </button>
+
+          <div id="candidateDetails" class="details hidden">
+            <!-- Candidate details injected here -->
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Info Strip -->
+    <section class="info-strip">
+      <div class="stat">
+        <div class="num">99.95%</div>
+        <div class="lbl">SLA Uptime</div>
+      </div>
+      <div class="stat">
+        <div class="num">24/7</div>
+        <div class="lbl">Global Support</div>
+      </div>
+      <div class="stat">
+        <div class="num">125+</div>
+        <div class="lbl">Enterprise Clients</div>
+      </div>
+      <div class="stat">
+        <div class="num">0→1</div>
+        <div class="lbl">Innovation Mindset</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cw-footer">
+    <p>© 2010–2025 Cloudy Worx | US MNC. All rights reserved.</p>
+  </footer>
+
+  <script src="reception.js"></script>
+</body>
+</html>

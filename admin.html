@@ -1,0 +1,112 @@
+@'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudy Worx | Admin Submissions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--brand:#00d4ff;--ink:#fff;--bg:#000;--panel:rgba(255,255,255,.06)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,sans-serif}
+    header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:rgba(0,0,0,.7);border-bottom:1px solid rgba(255,255,255,.12)}
+    .logo{font-weight:600;color:var(--brand)}
+    main{max-width:1200px;margin:24px auto;padding:0 16px}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;margin-bottom:16px}
+    table{width:100%;border-collapse:collapse}
+    th, td{border:1px solid rgba(255,255,255,.15);padding:8px;vertical-align:top}
+    th{background:rgba(255,255,255,.08)}
+    button, a.btn{display:inline-block;background:var(--brand);color:#081018;border:none;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
+    .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    input[type="search"]{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.55);color:#fff;min-width:260px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">☁️ Cloudy Worx – Admin</div>
+    <nav>
+      <a class="btn" href="/contact.html">Back to Contact</a>
+      <a class="btn" href="/api/contacts.xlsx">Download Excel</a>
+    </nav>
+  </header>
+  <main>
+    <div class="card bar">
+      <strong id="count">0</strong>&nbsp;submissions
+      <input id="q" type="search" placeholder="Search name, email, org, message..." />
+      <button id="refresh">Refresh</button>
+      <button id="clearLocal">Clear LocalStorage (this browser)</button>
+    </div>
+    <div class="card">
+      <div style="overflow:auto">
+        <table id="tbl">
+          <thead>
+            <tr>
+              <th>First Name</th><th>Last Name</th><th>Email</th><th>Job Title</th><th>Organization</th><th>Phone</th>
+              <th>Inquiry</th><th>Country</th><th>Industry</th><th>Message</th><th>Submitted At</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const tblBody = document.querySelector('#tbl tbody');
+    const countEl = document.getElementById('count');
+    const q = document.getElementById('q');
+
+    document.getElementById('refresh').addEventListener('click', load);
+    document.getElementById('clearLocal').addEventListener('click', () => { localStorage.removeItem('cloudyworx_contacts'); alert('LocalStorage cleared for this browser.'); load();});
+    q.addEventListener('input', render);
+
+    let data = [];
+
+    async function load(){
+      try {
+        const res = await fetch('/api/contacts');
+        const json = await res.json();
+        data = json.ok ? json.rows : [];
+      } catch (e) { console.error(e); data = []; }
+
+      try {
+        const local = JSON.parse(localStorage.getItem('cloudyworx_contacts')) || [];
+        const mergedLocal = local.map(x => ({
+          'First Name': x.firstName||'', 'Last Name': x.lastName||'', 'Email': x.email||'', 'Job Title': x.title||'',
+          'Organization': x.org||'', 'Phone': x.phone||'', 'Inquiry': x.inquiry||'', 'Country': x.country||'',
+          'Industry': x.industry||'', 'Message': x.message||'', 'Submitted At': x.submittedAt||''
+        }));
+        data = [...data, ...mergedLocal];
+      } catch {}
+
+      render();
+    }
+
+    function render(){
+      const term = (q.value||'').toLowerCase();
+      const rows = data.filter(r => !term || JSON.stringify(r).toLowerCase().includes(term));
+      countEl.textContent = rows.length;
+      tblBody.innerHTML = '';
+      rows.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${r['First Name']||''}</td>
+          <td>${r['Last Name']||''}</td>
+          <td>${r['Email']||''}</td>
+          <td>${r['Job Title']||''}</td>
+          <td>${r['Organization']||''}</td>
+          <td>${r['Phone']||''}</td>
+          <td>${r['Inquiry']||''}</td>
+          <td>${r['Country']||''}</td>
+          <td>${r['Industry']||''}</td>
+          <td>${r['Message']||''}</td>
+          <td>${r['Submitted At']||''}</td>`;
+        tblBody.appendChild(tr);
+      });
+    }
+
+    load();
+  </script>
+</body>
+</html>
+'@ | Set-Content -Encoding UTF8 public\admin.html

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | Testimonials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reception.css">
+  <style>
+
+    :root { --blue:#00d4ff; --dim:#d9f7ff; }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
+      position:relative;
+      min-height:100vh;
+    }
+
+    /* ⭐ Moving Stars */
+    .star {
+      position:absolute;
+      width:2px; height:2px;
+      background:#fff;
+      border-radius:50%;
+      animation: floatStars linear infinite;
+    }
+    @keyframes floatStars {
+      from { transform: translateY(100vh); opacity:0.8; }
+      to   { transform: translateY(-10vh); opacity:0.2; }
+    }
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:2;
+      background:rgba(0,0,0,.75);
+      backdrop-filter:blur(6px);
+      padding:16px 28px;
+      display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,.15);
+    }
+    .logo{font-weight:700;color:var(--blue);text-shadow:0 0 10px rgba(0,212,255,.6)}
+    nav a{color:#ddd;text-decoration:none;margin-left:18px}
+    nav a:hover,nav a.active{color:var(--blue);text-shadow:0 0 8px rgba(0,212,255,.8)}
+
+    /* Section */
+    .section{
+      max-width:1100px;
+      margin:0 auto;
+      padding:70px 20px;
+      text-align:center;
+      position:relative;
+      z-index:1; /* keep above stars */
+    }
+    .section h1{margin:0 0 10px;font-size:34px;color:var(--blue);text-shadow:0 0 15px rgba(0,212,255,.6)}
+    .section p.lead{margin:0 auto 34px;max-width:800px;color:var(--dim)}
+
+    /* Testimonial card */
+    .tcard{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:14px;
+      margin:18px auto;
+      padding:24px 26px;
+      max-width:860px;
+      text-align:left;
+      box-shadow:0 0 18px rgba(0,212,255,.25);
+      position:relative;
+    }
+    .tcard::before{
+      content:"❝";
+      position:absolute;
+      left:14px;
+      top:-8px;
+      font-size:40px;
+      color:var(--blue);
+      opacity:.7;
+    }
+    .t-meta{display:flex;gap:12px;align-items:center;margin-top:14px;color:#bfefff;font-size:14px}
+    .t-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.35);padding:6px 10px;border-radius:999px;color:var(--blue);font-weight:600}
+
+    .cta{
+      display:inline-block;margin-top:28px;padding:12px 18px;border-radius:10px;background:var(--blue);color:#001018;
+      text-decoration:none;font-weight:700;box-shadow:0 6px 16px rgba(0,212,255,.35)
+    }
+    .cta:hover{filter:brightness(1.05)}
+
+    footer{background:rgba(0,0,0,.85);padding:20px;text-align:center;border-top:1px solid rgba(255,255,255,.15);color:#ccc;position:relative;z-index:1}
+  </style>
+</head>
+<body>
+
+<!-- ⭐ Starfield background -->
+<script>
+  for (let i=0; i<100; i++) {
+    let star = document.createElement("div");
+    star.classList.add("star");
+    star.style.left = Math.random()*100 + "vw";
+    star.style.top = Math.random()*100 + "vh";
+    star.style.animationDuration = (10 + Math.random()*20) + "s";
+    star.style.opacity = Math.random();
+    document.body.appendChild(star);
+  }
+</script>
+
+ <header class="cw-header">
+  <a class="logo" href="index.html">
+    <img src="logo-cloud.png" alt="Cloudy Worx Logo">
+  </a>
+
+    <span class="logo">Cloudy Worx</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="reception.html">Reception</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+<main class="section">
+  <h1>What Our Clients Say</h1>
+  <p class="lead">Real stories from enterprises modernizing with Cloudy Worx—governance, speed, and measurable outcomes.</p>
+
+  <article class="tcard">
+    Cloudy Worx delivered a secure cloud migration ahead of schedule with zero downtime. Their governance model,
+    weekly steering, and transparent risk tracking kept stakeholders aligned end-to-end.
+    <div class="t-meta">
+      <span class="t-badge">Enterprise Cloud</span>
+      <span>— CIO, Global Retail Enterprise</span>
+    </div>
+  </article>
+
+  <article class="tcard">
+    The team is a high-performing partner for outsourcing and automation. Finance close cycles dropped by 35%,
+    and the new controls framework improved audit readiness across regions.
+    <div class="t-meta">
+      <span class="t-badge">FinOps + Automation</span>
+      <span>— Head of Finance, APAC Construction Company</span>
+    </div>
+  </article>
+
+  <article class="tcard">
+    From strategy to execution, Cloudy Worx brought deep domain, clean data pipelines, and AI that actually ships.
+    Our prediction accuracy improved 22% and insights arrive in hours, not days.
+    <div class="t-meta">
+      <span class="t-badge">AI Analytics</span>
+      <span>— VP Data, Fortune 500 Financial Services</span>
+    </div>
+  </article>
+
+  <article class="tcard">
+    Their zero-trust rollout and identity modernization cut incident MTTR by 60%. The playbooks and purple-team drills
+    gave us confidence to scale.
+    <div class="t-meta">
+      <span class="t-badge">Security & Identity</span>
+      <span>— CISO, Global Manufacturing</span>
+    </div>
+  </article>
+
+  <a class="cta" href="contact.html">Speak to an expert →</a>
+</main>
+
+<footer>
+  © 2010 Cloudy Worx | US MNC. All rights reserved.
+</footer>
+
+</body>
+</html>

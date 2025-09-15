@@ -1,0 +1,23 @@
+.cw-header {
+  display: flex;
+  justify-content: center;   /* center the logo horizontally */
+  align-items: center;       /* center vertically */
+  background: rgba(0, 0, 0, 0.9); /* dark background */
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 195, 255, 0.25);
+}
+
+/* Logo image */
+.cw-header .logo img {
+  height: 60px;        /* size of the logo */
+  width: auto;         /* keep proportions */
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 0 10px rgba(0,195,255,0.4); /* glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.cw-header .logo img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(0,195,255,0.6);
+}

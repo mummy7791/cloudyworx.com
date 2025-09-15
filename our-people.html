@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudy Worx | Our People</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#00c3ff;--ink:#001018;--dim:#bfeeff;--panel:rgba(0,15,25,.72);--border:rgba(0,195,255,.22);--glow:0 0 18px rgba(0,195,255,.45);--bg:#000;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,sans-serif;background:var(--bg);color:var(--dim);line-height:1.65}
+    header{padding:20px;background:rgba(0,0,0,.9);border-bottom:1px solid var(--border)}
+    .logo{color:var(--blue);font-weight:700;text-decoration:none}
+    main{max-width:1000px;margin:0 auto;padding:50px 20px}
+    h1{color:var(--blue);margin:0 0 16px;text-shadow:var(--glow)}
+    h2{color:var(--blue);margin:24px 0 12px;text-shadow:var(--glow)}
+    p{margin:10px 0}
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(2,1fr)}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;box-shadow:0 6px 16px rgba(0,0,0,.6)}
+    .card h3{margin-top:0;color:var(--blue);text-shadow:var(--glow)}
+    footer{padding:20px;text-align:center;border-top:1px solid var(--border);background:rgba(0,0,0,.9);color:#9fdcff;margin-top:40px}
+    .note{text-align:center;margin-top:20px;font-weight:600;color:var(--blue);text-shadow:var(--glow)}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">☁️ Cloudy Worx</a>
+  </header>
+
+  <main>
+    <h1>Our People</h1>
+    <p><b>Become a Cloudy Worker or skill up with our courses.</b></p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Become an Employee</h3>
+        <p>Join our global team of innovators, engineers, and strategists. Cloudy Worx offers career paths in AI, cloud, consulting, cybersecurity, and research.</p>
+        <p><a href="careers.html" style="color:var(--blue);font-weight:600">Apply Now →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Start Learning</h3>
+        <p>Grow your skills with Cloudy Worx Academy. Explore hands-on courses in cloud computing, AI, quantum, and digital transformation — designed for all experience levels.</p>
+        <p><a href="learning.html" style="color:var(--blue);font-weight:600">Explore Courses →</a></p>
+      </div>
+    </div>
+
+    <div class="note">
+      🌍 Empowering people worldwide to shape the future with technology.
+    </div>
+  </main>
+
+  <footer>© 2010 Cloudy Worx | Our People</footer>
+</body>
+</html>
