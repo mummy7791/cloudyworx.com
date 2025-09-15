@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="home.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
 </head>
 <body>
 
@@ -18,27 +17,25 @@
     <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=1600&q=80" alt="">
     <img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?w=1600&q=80" alt="">
   </div>
-  
 
   <!-- Main header -->
- <header class="cw-header">
-  <!-- Logo as a link back to homepage -->
-  <a class="logo" href="index.html">
-    <img src="logo-cloud.png" alt="Cloudy Worx Logo">
-  </a>
+  <header class="cw-header">
+    <!-- Logo as a link back to homepage -->
+    <a class="logo" href="index.html" aria-label="Cloudy Worx Home">
+      <img src="logo-cloud.png" alt="Cloudy Worx Logo">
+    </a>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="in.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="careers.html">Careers</a>
-    <a href="reception.html">Reception</a>
-    <a href="about.html">About</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="reception.html">Reception</a>
+      <a href="about.html">About</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main class="cw-main">
     <!-- HERO -->
@@ -46,17 +43,16 @@
       <div class="hero-text">
         <h1>Maximize Asset Value with <span>Cloudy Worx AssetOps</span></h1>
         <p>Optimize asset performance with AI-driven monitoring and predictive maintenance on an enterprise-grade EAM stack.</p>
-        <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
-            <a class="btn" href="explore.html" style="padding:12px 18px;border-radius:10px;background:#00c3ff;color:#001018;text-decoration:none;font-weight:700">Explore more</a>
-            <a class="btn secondary" href="casestudy.html" style="padding:12px 18px;border-radius:10px;border:1px solid rgba(0,195,255,.4);color:#7fd9ff;text-decoration:none;font-weight:700">Read the case studies</a>
-          </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="explore.html">Explore more</a>
+          <a class="btn secondary" href="casestudy.html">Read the case studies</a>
+        </div>
       </div>
-  <div class="hero-art" aria-hidden="true">
-  <!-- AI + Data visualization -->
-  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80" alt="AI and Data">
-</div>
 
-
+      <div class="hero-art" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80" alt="AI and Data">
+      </div>
     </section>
 
     <!-- LATEST NEWS -->
@@ -230,7 +226,7 @@
           <h3>Our company</h3>
           <p>Explore our history and our culture of applying technology to real-world problems.</p>
           <div class="links">
-            <a href="about-cloudyworx.htm">About Cloudy Worx</a>
+            <a href="about-cloudyworx.html">About Cloudy Worx</a>
             <a href="our-history.html">Our history</a>
             <a href="our-innovations.html">Our innovations</a>
           </div>
@@ -311,10 +307,10 @@
   <script>
     const slideshow = document.querySelector('.cw-slideshow');
     document.addEventListener('visibilitychange', () => {
-      slideshow.style.animationPlayState =
-        document.hidden ? 'paused' : 'running';
+      const playState = document.hidden ? 'paused' : 'running';
+      slideshow.style.animationPlayState = playState;
       document.querySelectorAll('.cw-slideshow img').forEach(img=>{
-        img.style.animationPlayState = document.hidden ? 'paused' : 'running';
+        img.style.animationPlayState = playState;
       });
     });
   </script>
