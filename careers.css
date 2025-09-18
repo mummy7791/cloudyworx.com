@@ -2,28 +2,40 @@
 /* Header container */
 .cw-header {
   display: flex;
-  justify-content: center;   /* center the logo horizontally */
-  align-items: center;       /* center vertically */
-  background: rgba(0, 0, 0, 0.9); /* dark background */
-  padding: 12px 0;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 12px 30px;
   border-bottom: 1px solid rgba(0, 195, 255, 0.25);
 }
 
 /* Logo image */
 .cw-header .logo img {
-  height: 60px;        /* size of the logo */
-  width: auto;         /* keep proportions */
-  border-radius: 12px; /* rounded corners */
-  box-shadow: 0 0 10px rgba(0,195,255,0.4); /* glow */
+  height: 50px;        /* adjust logo size */
+  width: auto;
+  border-radius: 12px; /* rounded edges */
+  box-shadow: 0 0 10px rgba(0,195,255,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 .cw-header .logo img:hover {
   transform: scale(1.08);
   box-shadow: 0 0 16px rgba(0,195,255,0.6);
 }
 
+/* Navigation links */
+.cw-header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #bfeeff;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.cw-header nav a:hover {
+  color: #00c3ff;
+  text-shadow: 0 0 8px rgba(0,195,255,0.6);
+}
 :root{
   --blue: #00c3ff;        /* primary light blue */
   --blue-dim: #7fd9ff;    /* softer blue for body text */
@@ -466,3 +478,4 @@ footer {
   font-size: 14px;
   line-height: 1.5;
 }
+
