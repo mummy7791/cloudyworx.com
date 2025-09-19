@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudy Worx | Admin Dashboard</title>
+  <link rel="stylesheet" href="assets/cw-base.css">
+  <script defer src="storage.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">Cloudy Worx – Admin</div>
+    <a href="index.html" style="color:#8fd6ff">Back</a>
+  </header>
+  <div class="wrap">
+    <div class="card">
+      <h2>Create Candidate</h2>
+      <input id="name" placeholder="Name">
+      <input id="email" type="email" placeholder="Email">
+      <input id="phone" placeholder="Phone">
+      <input id="job" placeholder="Job Role">
+      <input id="location" placeholder="Location">
+      <input id="package" placeholder="Package">
+      <button id="createBtn">Save</button>
+    </div>
+
+    <div class="card">
+      <h2>Candidates</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Job</th><th>Actions</th></tr></thead>
+        <tbody id="candRows"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Notifications (Leave Requests)</h2>
+      <div id="notifBox"></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (s)=>document.querySelector(s);
+
+    function randId(){ return 'CW'+Math.floor(1000+Math.random()*9000); }
+    function randPwd(){ return Math.random().toString(36).slice(2,8); }
+
+    function renderTable(){
+      const list = CWStore.getCandidates();
+      $('#candRows').innerHTML = '';
+      list.forEach(c=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${c.id}</td><td>${c.name}</td><td>${c.job}</td>
+                        <td><button onclick="del('${c.id}')">Delete</button></td>`;
+        $('#candRows').appendChild(tr);
+      });
+    }
+
+    function del(id){ CWStore.deleteCandidate(id); renderTable(); }
+
+    $('#createBtn').addEventListener('click',()=>{
+      const c = {
+        id: randId(),
+        password: randPwd(),
+        name: $('#name').value,
+        email: $('#email').value,
+        phone: $('#phone').value,
+        job: $('#job').value,
+        location: $('#location').value,
+        package: $('#package').value,
+        leaves:[], attendance:[], payslips:[]
+      };
+      CWStore.upsertCandidate(c);
+      alert(`Candidate Created ✅\\nID: ${c.id}\\nPassword: ${c.password}`);
+      renderTable();
+    });
+
+    function loadNotifs(){
+      const n = CWStore.pullNotifications();
+      $('#notifBox').innerHTML = n.map(x=>`<div class="pill">${x.message}</div>`).join('');
+    }
+
+    renderTable(); loadNotifs();
+  </script>
+</body>
+</html>

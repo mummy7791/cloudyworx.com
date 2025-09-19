@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudy Worx | Candidate Portal</title>
+  <link rel="stylesheet" href="assets/cw-base.css">
+  <script defer src="storage.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="loginBox">
+      <h2>Candidate Login</h2>
+      <input id="lg_id" placeholder="Candidate ID">
+      <input id="lg_pwd" type="password" placeholder="Password">
+      <button id="lg_btn">Login</button>
+    </div>
+
+    <div id="dash" style="display:none">
+      <div class="card">
+        <h2>Profile</h2>
+        <div id="profile"></div>
+      </div>
+      <div class="card">
+        <h2>Apply Leave</h2>
+        <input id="lv_from" type="date">
+        <input id="lv_to" type="date">
+        <input id="lv_reason" placeholder="Reason">
+        <button id="lv_btn">Apply Leave</button>
+        <div id="lv_list"></div>
+      </div>
+      <div class="card">
+        <h2>Attendance</h2>
+        <div id="att_list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let me=null; const $=s=>document.querySelector(s);
+
+    $('#lg_btn').addEventListener('click',()=>{
+      const id=$('#lg_id').value.trim(); const pwd=$('#lg_pwd').value.trim();
+      const c = CWStore.getCandidate(id);
+      if(c && c.password===pwd){ me=c; $('#loginBox').style.display='none'; $('#dash').style.display='block'; render(); }
+      else alert('Invalid credentials');
+    });
+
+    function render(){
+      $('#profile').innerHTML=`<b>${me.name}</b> (${me.id})<br>${me.job} - ${me.location}`;
+      $('#lv_list').innerHTML=(me.leaves||[]).map(l=>`<div class="pill">${l.from}→${l.to} - ${l.reason} (${l.status||'PENDING'})</div>`).join('');
+      $('#att_list').innerHTML=(me.attendance||[]).map(a=>`<div class="pill">${a.date} - ${a.status}</div>`).join('');
+    }
+
+    $('#lv_btn').addEventListener('click',()=>{
+      const from=$('#lv_from').value, to=$('#lv_to').value, reason=$('#lv_reason').value;
+      me.leaves=me.leaves||[];
+      me.leaves.push({from,to,reason,status:'PENDING'});
+      CWStore.upsertCandidate(me);
+      CWStore.pushNotification({type:'LEAVE',message:`${me.id} applied leave ${from}→${to}`});
+      alert('Leave Applied ✅'); render();
+    });
+  </script>
+</body>
+</html>

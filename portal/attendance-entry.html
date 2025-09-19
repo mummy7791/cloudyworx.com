@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudy Worx | Attendance Entry</title>
+  <link rel="stylesheet" href="assets/cw-base.css">
+  <script defer src="storage.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Attendance Entry</h1>
+    <div class="card">
+      <select id="candSel"></select>
+      <input id="dt" type="date">
+      <select id="st"><option>PRESENT</option><option>ABSENT</option><option>WFH</option></select>
+      <button id="save">Save Attendance</button>
+    </div>
+    <div class="card">
+      <h2>Recent Records</h2>
+      <div id="rows"></div>
+    </div>
+  </div>
+
+  <script>
+    const $=s=>document.querySelector(s);
+
+    function loadCandidates(){
+      const list=CWStore.getCandidates();
+      $('#candSel').innerHTML=list.map(c=>`<option value="${c.id}">${c.id} - ${c.name}</option>`).join('');
+    }
+
+    $('#save').addEventListener('click',()=>{
+      const id=$('#candSel').value, date=$('#dt').value, st=$('#st').value;
+      const c=CWStore.getCandidate(id);
+      if(!c) return alert('Invalid Candidate');
+      c.attendance=c.attendance||[];
+      c.attendance.push({date,status:st});
+      CWStore.upsertCandidate(c);
+      alert('Attendance Saved ✅'); render();
+    });
+
+    function render(){
+      const list=CWStore.getCandidates();
+      $('#rows').innerHTML='';
+      list.forEach(c=>{
+        (c.attendance||[]).slice(-3).forEach(a=>{
+          $('#rows').innerHTML+=`<div class="pill">${c.id} - ${a.date} - ${a.status}</div>`;
+        });
+      });
+    }
+
+    loadCandidates(); render();
+  </script>
+</body>
+</html>
