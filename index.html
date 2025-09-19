@@ -2,135 +2,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cloudy Worx | Official Website & Portal</title>
+
+  <!-- SEO title & description -->
+  <title>Cloudy Worx | IT Services, Cloud & AI Solutions</title>
+  <meta name="description" content="Cloudy Worx is a global IT services company delivering Cloud, AI, Data, and Networking solutions. Offices in Bangalore, Hyderabad, Chennai, Pune & Mumbai with global clients in the US & UK." />
+  <link rel="canonical" href="https://cloudyworx.com/" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="home.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cloudy Worx | IT Services, Cloud & AI Solutions" />
+  <meta property="og:description" content="Delivering enterprise-grade Cloud, AI/ML, Data, and Networking solutions for global clients." />
+  <meta property="og:url" content="https://cloudyworx.com/" />
+  <meta property="og:site_name" content="Cloudy Worx" />
+  <meta property="og:image" content="https://cloudyworx.com/images/og-cover.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cloudy Worx | IT Services, Cloud & AI Solutions" />
+  <meta name="twitter:description" content="Enterprise IT, Cloud, AI, and Networking services for businesses worldwide." />
+  <meta name="twitter:image" content="https://cloudyworx.com/images/og-cover.jpg" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Cloudy Worx",
+    "url": "https://cloudyworx.com/",
+    "logo": "https://cloudyworx.com/images/logo-cloud.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/cloudy-worx",
+      "https://x.com/cloudyworx"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://cloudyworx.com/",
+    "name": "Cloudy Worx",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://cloudyworx.com/search?q={query}",
+      "query-input": "required name=query"
+    }
+  }
+  </script>
 </head>
 
 <body>
 
   <!-- Moving Background Slideshow -->
   <div class="cw-slideshow" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=1600&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?w=1600&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80" alt="Cloud computing background">
+    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=1600&q=80" alt="Business technology background">
+    <img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?w=1600&q=80" alt="AI and data visualization">
   </div>
   
-
   <!-- Main header -->
- <header class="cw-header">
-  <!-- Logo as a link back to homepage -->
-  <a class="logo" href="index.html">
-    <img src="logo-cloud.png" alt="Cloudy Worx Logo">
-  </a>
+  <header class="cw-header">
+    <a class="logo" href="index.html">
+      <img src="logo-cloud.png" alt="Cloudy Worx Logo">
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="careers.html">Careers</a>
+      <a href="reception.html">Reception</a>
+      <a href="about.html">About</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="careers.html">Careers</a>
-    <a href="reception.html">Reception</a>
-    <a href="about.html">About</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-   
-
-  </nav>
-</header>
-
-
+  <!-- Main content -->
   <main class="cw-main">
+
     <!-- HERO -->
     <section class="hero">
       <div class="hero-text">
         <h1>Maximize Asset Value with <span>Cloudy Worx AssetOps</span></h1>
         <p>Optimize asset performance with AI-driven monitoring and predictive maintenance on an enterprise-grade EAM stack.</p>
         <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
-            <a class="btn" href="explore.html" style="padding:12px 18px;border-radius:10px;background:#00c3ff;color:#001018;text-decoration:none;font-weight:700">Explore more</a>
-            <a class="btn secondary" href="casestudy.html" style="padding:12px 18px;border-radius:10px;border:1px solid rgba(0,195,255,.4);color:#7fd9ff;text-decoration:none;font-weight:700">Read the case studies</a>
-          </div>
+          <a class="btn" href="explore.html">Explore more</a>
+          <a class="btn secondary" href="casestudy.html">Read the case studies</a>
+        </div>
       </div>
-  <div class="hero-art" aria-hidden="true">
-  <!-- AI + Data visualization -->
-  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80" alt="AI and Data">
-</div>
-
-
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80" alt="AI and Data illustration">
+      </div>
     </section>
 
     <!-- LATEST NEWS -->
     <section class="panel">
-      <div class="panel-head">
-        <h2>Latest news</h2>
-      </div>
+      <div class="panel-head"><h2>Latest news</h2></div>
       <div class="news-grid">
         <article class="card">
           <h3>Launching simpler MDM for SMBs</h3>
           <p>Introducing Cloudy Worx MDM Essentials—built for small and medium businesses to secure devices and data with less complexity.</p>
-          <a href="learn-more.html" class="link">Learn more →</a>
+          <a href="learn-more.html">Learn more →</a>
         </article>
         <article class="card">
           <h3>Open AI model for solar weather</h3>
           <p>Cloudy Worx Research releases an open-source foundation model to forecast solar storms and protect critical infrastructure.</p>
-          <a href="solar-weather-model.html" class="link">Get the model →</a>
+          <a href="solar-weather-model.html">Get the model →</a>
         </article>
         <article class="card num-card">
           <div class="big-num">1 2 3 4</div>
           <p>Cloudy Worx updates and insights—stay current with our monthly digest.</p>
-          <a href="updates.html" class="link">Subscribe →</a>
+          <a href="updates.html">Subscribe →</a>
         </article>
       </div>
     </section>
 
     <!-- RECOMMENDED -->
     <section class="panel">
-      <div class="panel-head">
-        <h2>Recommended for you</h2>
-      </div>
+      <div class="panel-head"><h2>Recommended for you</h2></div>
       <div class="rec-grid">
         <article class="rec">
-          <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?w=1200&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?w=1200&q=80" alt="Business planning">
           <div>
             <h3>AI-infused business planning</h3>
-            <p>Automate routine tasks, uncover insights, and empower teams with Cloudy Worx Planning Analytics.</p>
-            <a class="link" href="planning-analytics.html">Explore →</a>
+            <p>Automate tasks, uncover insights, and empower teams with Cloudy Worx Planning Analytics.</p>
+            <a href="planning-analytics.html">Explore →</a>
           </div>
         </article>
-
         <article class="rec">
-          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1200&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1200&q=80" alt="AI agent workshop">
           <div>
             <h3>AI Agents Accelerator</h3>
             <p>Book a private session to identify high-value AI agent use cases for your enterprise workflows.</p>
-            <a class="link" href="ai-agents-accelerator.html">Book now →</a>
+            <a href="ai-agents-accelerator.html">Book now →</a>
           </div>
         </article>
-
         <article class="rec">
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80" alt="Analytics software">
           <div>
             <h3>Offers — Analytics Suite</h3>
-            <p>Get 3 months free on first annual subscription. Offer valid until 30 September 2025. Renewals excluded.</p>
-            <a class="tag" href="analytics-offer.html">Limited time</a>
+            <p>Get 3 months free on first annual subscription. Offer valid until 30 September 2025.</p>
+            <a href="analytics-offer.html">Limited time</a>
           </div>
         </article>
-
         <article class="rec">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="AI observability">
           <div>
             <h3>Cloudy Worx Instana</h3>
             <p>Agentic AI observability—resolve incidents up to 80% faster with real-time root cause analysis.</p>
-            <a class="link" href="instana.html">Try Instana →</a>
+            <a href="instana.html">Try Instana →</a>
           </div>
         </article>
       </div>
@@ -138,13 +173,11 @@
 
     <!-- AI INSIGHTS -->
     <section class="panel">
-      <div class="panel-head">
-        <h2>AI insights and tools</h2>
-      </div>
+      <div class="panel-head"><h2>AI insights and tools</h2></div>
       <div class="two-col">
         <div class="col card">
           <h3>For developers</h3>
-          <ul class="bullets">
+          <ul>
             <li><a href="#">Start building with Granite models</a></li>
             <li><a href="#">Explore AI courses, APIs, datasets</a></li>
             <li><a href="#">Accelerate with Code Assistant</a></li>
@@ -153,7 +186,7 @@
         </div>
         <div class="col card">
           <h3>For business leaders</h3>
-          <ul class="bullets">
+          <ul>
             <li><a href="#">CEO’s guide to generative AI</a></li>
             <li><a href="#">AI curriculum for leaders</a></li>
             <li><a href="#">Deploy HR AI agent with Orchestrate</a></li>
@@ -163,67 +196,56 @@
       </div>
     </section>
 
-    <!-- BIG BLUE FOR YOU / PROMO -->
+    <!-- PROMO -->
     <section class="banner">
       <div class="banner-inner">
         <div>
           <h2>Big Blue for You</h2>
-          <p>Act now to save 3 months on your first annual subscription of solutions built to move your business forward — plus monthly deals. Offers valid until 30 September 2025.</p>
+          <p>Save 3 months on your first annual subscription of solutions built to move your business forward. Offer valid until 30 September 2025.</p>
         </div>
         <a class="btn primary" href="big-blue.html">Discover more</a>
       </div>
     </section>
 
-    <!-- TECH & CONSULTING -->
+    <!-- TECHNOLOGY & CONSULTING -->
     <section class="panel">
       <div class="panel-head">
         <h2>Technology & Consulting</h2>
-        <p>From next-gen AI to hybrid cloud and Cloudy Worx Consulting—reinvent how your business works in the age of AI.</p>
+        <p>From next-gen AI to hybrid cloud and consulting—reinvent how your business works in the age of AI.</p>
       </div>
       <div class="products">
         <div class="prod card">
           <h3>Cloudy Worx Cloud</h3>
           <p>On-demand cloud platform and APIs for modern apps.</p>
-          <a class="link" href="cloud.html">Explore →</a>
+          <a href="cloud.html">Explore →</a>
         </div>
         <div class="prod card">
           <h3>MaaS360 UEM</h3>
           <p>Unified endpoint management for every device type.</p>
-          <a class="link" href="maas360.html">Explore →</a>
+          <a href="maas360.html">Explore →</a>
         </div>
         <div class="prod card">
           <h3>watsonx Assistant</h3>
           <p>Virtual agents customizable to any domain.</p>
-          <a class="link" href="watsonx-assistant.html">Explore →</a>
+          <a href="watsonx-assistant.html">Explore →</a>
         </div>
         <div class="prod card">
           <h3>ELM Suite</h3>
           <p>Software for product & application lifecycle.</p>
-          <a class="link" href="elm-suite.html">Explore →</a>
+          <a href="elm-suite.html">Explore →</a>
         </div>
-      </div>
-
-      <div class="capability-tags">
-        <a href="ai-solutions.html">AI solutions</a>
-        <a href="ai-models.html">AI models</a>
-        <a href="consulting.html">Consulting</a>
-        <a href="analytics.html">Analytics</a>
-        <a href="it-automation.html">IT automation</a>
-        <a href="compute-servers.html">Compute & servers</a>
-        <a href="databases.html">Databases</a>
-        <a href="security-identity.html">Security & identity</a>
       </div>
     </section>
 
-    <!-- WEBINAR CTA -->
+    <!-- WEBINAR -->
     <section class="webinar">
       <div class="webinar-card">
         <div class="w-left">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" alt="">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" alt="Webinar session">
         </div>
         <div class="w-right">
           <h3>Orchestrating AI: From Projects to Profits – Live Webinar</h3>
-          <p>Unlock the power of Agentic AI to transform enterprise workflows and drive outcomes. Join us on <strong>18 September 2025, 10:30 AM IST</strong>.</p>
+          <p>Unlock the power of Agentic AI to transform enterprise workflows. Join us on <strong>18 September 2025, 10:30 AM IST</strong>.</p>
           <a class="btn primary" href="#">Register now</a>
         </div>
       </div>
@@ -231,15 +253,13 @@
 
     <!-- INSIDE COMPANY -->
     <section class="panel">
-      <div class="panel-head">
-        <h2>Inside Cloudy Worx</h2>
-      </div>
+      <div class="panel-head"><h2>Inside Cloudy Worx</h2></div>
       <div class="inside-grid">
         <div class="card">
           <h3>Our company</h3>
           <p>Explore our history and our culture of applying technology to real-world problems.</p>
           <div class="links">
-            <a href="about-cloudyworx.htm">About Cloudy Worx</a>
+            <a href="about-cloudyworx.html">About Cloudy Worx</a>
             <a href="our-history.html">Our history</a>
             <a href="our-innovations.html">Our innovations</a>
           </div>
@@ -316,7 +336,7 @@
     </div>
   </footer>
 
-  <!-- Optional: Pause slideshow when tab hidden (saves CPU) -->
+  <!-- Pause slideshow when tab hidden -->
   <script>
     const slideshow = document.querySelector('.cw-slideshow');
     document.addEventListener('visibilitychange', () => {
@@ -329,10 +349,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
