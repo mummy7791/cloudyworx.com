@@ -163,16 +163,87 @@
       </form>
     </section>
 
-    <!-- Sidebar -->
+ 
+	
+	
+	<!-- Sidebar -->
     <aside class="side">
-      <h3>Corporate Office Address</h3>
-      <div><strong>Cloudy Worx Ltd.</strong><br>Doddakannelli, Sarjapur Road<br>Bengaluru - 560 035, India</div>
-      <div style="margin-top:10px">📧 info@cloudyworx.com<br>📞 +1-555-123-4567</div>
-      <div style="margin-top:14px">
-        <button id="openAdmin" class="cta" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)">➡️ Admin Login</button>
+      <h3>Our Office Locations</h3>
+      
+      <div class="office-card">
+        <div class="office-city">Bengaluru</div>
+        <div class="office-address">293/154/172, Marathahalli - Sarjapur Outer Ring Rd, Kadubeesanahalli, Bengaluru, Karnataka 560103</div>
+      </div>
+      
+      <div class="office-card">
+        <div class="office-city">Hyderabad</div>
+        <div class="office-address">C8HR+FQW, Gachibowli, Hyderabad, Telangana 500032</div>
+      </div>
+      
+      <div class="office-card">
+        <div class="office-city">Mumbai</div>
+        <div class="office-address">G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051</div>
+      </div>
+      
+      <div class="office-card">
+        <div class="office-city">Pune</div>
+        <div class="office-address">3rd Floor, The Kode, Nearby Address: Brillio Technologies, cloudyworx Technologies, Baner - Pashan Link Rd, Pune, Maharashtra</div>
+      </div>
+      
+      <div class="address" style="margin-top:20px; padding:15px; background: #f8f9fa; border-radius: 8px;">
+        <div style="margin-bottom:8px">📧 info@cloudyworx.com</div>
+        <div>📞 +1-555-123-4567</div>
       </div>
     </aside>
   </main>
+  
+  <style>
+  .office-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.address {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.address div {
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.address div:first-child {
+  margin-bottom: 8px;
+}
+
+.office-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.office-city {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+.office-address {
+  color: #f0f0f0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+</style>
 
   <!-- Footer -->
   <footer>© 2010 Cloudy Worx | US MNC. All rights reserved.</footer>
@@ -181,7 +252,7 @@
   <div class="toast" id="toast">Saved! We’ll get back to you within 48 hours.</div>
 
   <!-- Admin Login Modal -->
-  <div class="modal" id="adminModal" aria-hidden="true">
+ <!-- <div class="modal" id="adminModal" aria-hidden="true">
     <div class="modal-card">
       <h3>Admin Login</h3>
       <form id="adminForm">
@@ -197,7 +268,7 @@
       </form>
     </div>
   </div>
-
+-->
   <!-- JS -->
   <script>
     // stars
