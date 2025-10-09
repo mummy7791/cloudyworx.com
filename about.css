@@ -70,6 +70,16 @@ body::before{
   color: #bfeeff;
   font-weight: 500;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+      color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: color .25s 
+ease, background .25s 
+ease, transform .25s 
+ease;
+    margin-left: 20px;
 }
 .cw-header nav a:hover,
 .cw-header nav a.active {
